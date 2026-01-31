@@ -3,25 +3,25 @@
 [ext_resource type="Script" uid="uid://d3tjdflb6b6he" path="res://core/main.gd" id="1_xa854"]
 [ext_resource type="PackedScene" uid="uid://dmg5tkwdpincx" path="res://features/mobs/mob.tscn" id="2_kagtj"]
 [ext_resource type="Script" uid="uid://cdow6fk708shv" path="res://features/player/player.gd" id="3_cus2n"]
-[ext_resource type="Texture2D" uid="uid://8uuhmmchjcg8" path="res://assets/icons/icon.svg" id="4_brq4u"]
 [ext_resource type="Script" uid="uid://d2sai3iaj6bw7" path="res://features/player/player_hurtbox.gd" id="5_jsmgm"]
+[ext_resource type="Texture2D" uid="uid://cjxdb10ld4kuw" path="res://assets/medusa-1.png" id="5_kagtj"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_0xm2m"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_xa854"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("4_brq4u")
+"texture": ExtResource("5_kagtj")
 }],
 "loop": true,
 "name": &"default",
-"speed": 3.0
+"speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1bvp3"]
-size = Vector2(127, 126)
+size = Vector2(46, 52)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h2yge"]
-size = Vector2(127, 126)
+size = Vector2(36, 45)
 
 [node name="Main" type="Node2D" unique_id=1126552333]
 script = ExtResource("1_xa854")
@@ -32,24 +32,25 @@ spawn_distance = 1000.0
 [node name="Player" type="CharacterBody2D" parent="." unique_id=654543967]
 position = Vector2(933, 537)
 script = ExtResource("3_cus2n")
-speed = 600
+speed = 300
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player" unique_id=932723914]
-sprite_frames = SubResource("SpriteFrames_0xm2m")
+sprite_frames = SubResource("SpriteFrames_xa854")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=637178078]
-position = Vector2(0.5, 0)
+position = Vector2(-3, 6)
 shape = SubResource("RectangleShape2D_1bvp3")
 
 [node name="Hurtbox" type="Area2D" parent="Player" unique_id=1282407398]
 script = ExtResource("5_jsmgm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Hurtbox" unique_id=1868805872]
-position = Vector2(0.5, 0)
+position = Vector2(-5, 5.5)
 shape = SubResource("RectangleShape2D_h2yge")
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=828341140]
+zoom = Vector2(1.5, 1.5)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=2000008038]
 

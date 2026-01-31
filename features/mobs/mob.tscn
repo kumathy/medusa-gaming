@@ -18,6 +18,7 @@ animations = [{
 size = Vector2(128, 127)
 
 [node name="Mob" type="Area2D" unique_id=1093079544 groups=["mobs"]]
+scale = Vector2(0.5, 0.5)
 script = ExtResource("1_nokgg")
 metadata/_edit_group_ = true
 

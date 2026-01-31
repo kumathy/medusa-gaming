@@ -21,9 +21,14 @@ func _process(delta: float) -> void:
 		velocity.y -= 1
 	if Input.is_action_pressed("move_down"):
 		velocity.y += 1
-		
+	
 	if velocity.length() > 0:
 		velocity = velocity.normalized() * speed
+		
+	if velocity.x > 0:
+		$AnimatedSprite2D.flip_h = true
+	elif velocity.x < 0:
+		$AnimatedSprite2D.flip_h = false
 		
 	position += velocity * delta
 	position = position.clamp(Vector2.ZERO, screen_size) # Prevent player from leaving screen.
