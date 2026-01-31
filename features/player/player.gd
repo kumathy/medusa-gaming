@@ -2,6 +2,18 @@ extends CharacterBody2D
 
 @export var speed = 400
 var screen_size
+@export var stats := {
+	"max_health": 100,
+	"health": 100,
+	"attack": 10,
+	"attack_speed": 10,
+	"speed": 400
+}
+
+@export var mask_multiplier := {
+	"red_mask_A": 1,
+	"red_mask_B": 1,
+}
 
 signal died
 
@@ -32,3 +44,6 @@ func die():
 	hide()
 	died.emit()
 	set_process(false)
+
+func _on_mask_item_body_entered(body: Node2D) -> void:
+	pass # Replace multiplier for item pickup
