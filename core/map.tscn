@@ -17,4 +17,4 @@ tile_map_data = PackedByteArray("AAADAAEAAAAYAAYAAAAEAAEAAAAYAAYAAAACAAEAAAAYAAY
 tile_set = ExtResource("1_g4473")
 
 [node name="spawn_point" type="Marker2D" parent="." unique_id=304788485]
-position = Vector2(225, 141)
+position = Vector2(199, 142)

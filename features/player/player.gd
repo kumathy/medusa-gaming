@@ -1,13 +1,11 @@
 extends CharacterBody2D
 
-@export var speed = 100
 @export var tail_whip_scene: PackedScene
 @export var stats := {
 	"max_health": 100,
 	"health": 100,
-	"attack": 10,
 	"attack_speed": 10,
-	"speed": 400
+	"speed": 150
 }
 @export var mask_multiplier := {
 	"red_mask_A": 1,
@@ -19,12 +17,13 @@ signal died
 var screen_size
 var attack_timer: float = 0.0
 var attack_interval: float = 1.0
-
 var facing_right: bool = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	screen_size = get_viewport_rect().size
+	$AnimatedSprite2D.animation = "idle"
+	$AnimatedSprite2D.play()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
@@ -66,9 +65,9 @@ func spawn_tail_whip():
 	var whip_offset: Vector2
 	
 	if facing_right:
-		whip_offset = Vector2(80, 0)
+		whip_offset = Vector2(150, 0)
 	else:
-		whip_offset = Vector2(-80, 0)
+		whip_offset = Vector2(-150, 0)
 		
 	whip.position = whip_offset
 	
