@@ -13,6 +13,12 @@
   </a>
 </p>
 
+## 👥 Team
+Made with pizza 🍕 and water 💧 by:
+- [Anh Tran](https://github.com/kumathy) – Programming
+- [Taylor Short](https://github.com/Short-T) – Programming, 2D Art
+- [Daren Murray](https://github.com/KilfaneDM) – 2D Art, Animation
+
 ## 🕹️ How to Run
 
 1. Download the zipped **.exe** file from the latest [Github Release](https://github.com/kumathy/medusa-gaming/releases/tag/1.0.0)
