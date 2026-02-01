@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://csyryssvuesx2" path="res://features/weapons/tail_whip.tscn" id="4_cus2n"]
 [ext_resource type="PackedScene" uid="uid://ctxvpi7vfkpdp" path="res://features/mobs/mob_types/red_oni.tscn" id="4_rayt5"]
 [ext_resource type="Script" uid="uid://d2sai3iaj6bw7" path="res://features/player/player_hurtbox.gd" id="5_jsmgm"]
-[ext_resource type="Script" path="res://core/mask_item.gd" id="6_kagtj"]
 [ext_resource type="Texture2D" uid="uid://bsn72a6axnxim" path="res://assets/mobs/medusa_idle.png" id="8_rayt5"]
 [ext_resource type="PackedScene" uid="uid://b1qj0djfxfat1" path="res://core/map.tscn" id="9_jsmgm"]
 [ext_resource type="PackedScene" uid="uid://b54ruipsatn2k" path="res://features/hud/game_over_hud.tscn" id="10_xhu5d"]
@@ -153,7 +152,6 @@ shape = SubResource("RectangleShape2D_h2yge")
 zoom = Vector2(1.4, 1.4)
 
 [node name="Dropped_Item" type="Area2D" parent="." unique_id=1635984389]
-script = ExtResource("6_kagtj")
 
 [node name="Sprite2D" type="Sprite2D" parent="Dropped_Item" unique_id=1346684971]
 
