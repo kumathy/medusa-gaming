@@ -54,11 +54,13 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_suum3"]
-size = Vector2(131, 136)
+size = Vector2(131, 101.600006)
 
 [node name="TailWhip" type="Area2D" unique_id=1351374538]
+scale = Vector2(1.25, 1.25)
 collision_layer = 0
 script = ExtResource("1_23c63")
+metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=754393748]
 scale = Vector2(1.5, 1.008)
@@ -67,5 +69,6 @@ frame = 5
 frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2060289321]
-position = Vector2(-17.5, 5)
+position = Vector2(-17.499998, 8.399997)
+scale = Vector2(0.99999976, 0.99999976)
 shape = SubResource("RectangleShape2D_suum3")

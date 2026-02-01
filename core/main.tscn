@@ -7,21 +7,100 @@
 [ext_resource type="PackedScene" uid="uid://csyryssvuesx2" path="res://features/weapons/tail_whip.tscn" id="4_cus2n"]
 [ext_resource type="PackedScene" uid="uid://ctxvpi7vfkpdp" path="res://features/mobs/mob_types/red_oni.tscn" id="4_rayt5"]
 [ext_resource type="Script" uid="uid://d2sai3iaj6bw7" path="res://features/player/player_hurtbox.gd" id="5_jsmgm"]
-[ext_resource type="Texture2D" uid="uid://cjxdb10ld4kuw" path="res://assets/medusa-1.png" id="5_kagtj"]
 [ext_resource type="Script" path="res://core/mask_item.gd" id="6_kagtj"]
-[ext_resource type="PackedScene" path="res://map.tscn" id="9_jsmgm"]
-[ext_resource type="PackedScene" uid="uid://b54ruipsatn2k" path="res://features/hud/game_over_hud.tscn" id="10_xhu5d"]
-[ext_resource type="Script" uid="uid://td0kv7hbt77e" path="res://core/mask_item.gd" id="6_kagtj"]
+[ext_resource type="Texture2D" uid="uid://bsn72a6axnxim" path="res://assets/mobs/medusa_idle.png" id="8_rayt5"]
 [ext_resource type="PackedScene" uid="uid://b1qj0djfxfat1" path="res://core/map.tscn" id="9_jsmgm"]
+[ext_resource type="PackedScene" uid="uid://b54ruipsatn2k" path="res://features/hud/game_over_hud.tscn" id="10_xhu5d"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_510js"]
+atlas = ExtResource("8_rayt5")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ua4h"]
+atlas = ExtResource("8_rayt5")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ntwa4"]
+atlas = ExtResource("8_rayt5")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ge7io"]
+atlas = ExtResource("8_rayt5")
+region = Rect2(0, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jeqa8"]
+atlas = ExtResource("8_rayt5")
+region = Rect2(128, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g0q11"]
+atlas = ExtResource("8_rayt5")
+region = Rect2(256, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lxu0y"]
+atlas = ExtResource("8_rayt5")
+region = Rect2(0, 256, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_slld4"]
+atlas = ExtResource("8_rayt5")
+region = Rect2(128, 256, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i2u5h"]
+atlas = ExtResource("8_rayt5")
+region = Rect2(256, 256, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7akvt"]
+atlas = ExtResource("8_rayt5")
+region = Rect2(0, 384, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bc33c"]
+atlas = ExtResource("8_rayt5")
+region = Rect2(128, 384, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s2qte"]
+atlas = ExtResource("8_rayt5")
+region = Rect2(256, 384, 128, 128)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xa854"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("5_kagtj")
+"texture": SubResource("AtlasTexture_510js")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7ua4h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ntwa4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ge7io")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jeqa8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g0q11")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lxu0y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_slld4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i2u5h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7akvt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bc33c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s2qte")
 }],
 "loop": true,
-"name": &"default",
+"name": &"idle",
 "speed": 5.0
 }]
 
@@ -38,17 +117,26 @@ spawn_interval = 1.0
 spawn_distance = 1000.0
 
 [node name="Background" parent="." unique_id=2052612969 instance=ExtResource("9_jsmgm")]
+position = Vector2(-400, -400)
 
 [node name="Player" type="CharacterBody2D" parent="." unique_id=654543967]
 visibility_layer = 2
 position = Vector2(933, 537)
+scale = Vector2(0.6, 0.6)
 script = ExtResource("3_cus2n")
-speed = 150
 tail_whip_scene = ExtResource("4_cus2n")
+stats = {
+"attack": 10,
+"attack_speed": 10,
+"health": 100,
+"max_health": 100,
+"speed": 150
+}
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player" unique_id=932723914]
 sprite_frames = SubResource("SpriteFrames_xa854")
+animation = &"idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=637178078]
 position = Vector2(-3, 6)
@@ -62,9 +150,7 @@ position = Vector2(-5, 5.5)
 shape = SubResource("RectangleShape2D_h2yge")
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=828341140]
-zoom = Vector2(1.5, 1.5)
-
-[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=2000008038]
+zoom = Vector2(1.4, 1.4)
 
 [node name="Dropped_Item" type="Area2D" parent="." unique_id=1635984389]
 script = ExtResource("6_kagtj")
