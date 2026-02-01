@@ -10,6 +10,10 @@ var spawn_timer: float = 0.0
 func _ready() -> void:
 	player = $Player
 	player.died.connect(_on_player_died)
+	var map = $Background
+	
+	var spawnpoint = map.get_node("spawn_point")
+	player.global_position = spawnpoint.global_position
 	
 func _process(delta: float) -> void:
 	spawn_timer += delta

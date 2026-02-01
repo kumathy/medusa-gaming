@@ -11,6 +11,8 @@
 [ext_resource type="Script" path="res://core/mask_item.gd" id="6_kagtj"]
 [ext_resource type="PackedScene" path="res://map.tscn" id="9_jsmgm"]
 [ext_resource type="PackedScene" uid="uid://b54ruipsatn2k" path="res://features/hud/game_over_hud.tscn" id="10_xhu5d"]
+[ext_resource type="Script" uid="uid://td0kv7hbt77e" path="res://core/mask_item.gd" id="6_kagtj"]
+[ext_resource type="PackedScene" uid="uid://b1qj0djfxfat1" path="res://core/map.tscn" id="9_jsmgm"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xa854"]
 animations = [{
