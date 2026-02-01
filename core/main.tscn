@@ -1,12 +1,14 @@
 [gd_scene format=3 uid="uid://cbgbs6jb4wmnb"]
 
 [ext_resource type="Script" uid="uid://d3tjdflb6b6he" path="res://core/main.gd" id="1_xa854"]
-[ext_resource type="PackedScene" uid="uid://dmg5tkwdpincx" path="res://features/mobs/mob.tscn" id="2_kagtj"]
+[ext_resource type="PackedScene" uid="uid://t45siut1o5d" path="res://features/mobs/mob_types/red_bat.tscn" id="2_brq4u"]
 [ext_resource type="Script" uid="uid://cdow6fk708shv" path="res://features/player/player.gd" id="3_cus2n"]
+[ext_resource type="PackedScene" uid="uid://bmbxhrw0r5ij" path="res://features/mobs/mob_types/red_humanoid.tscn" id="3_jsmgm"]
 [ext_resource type="PackedScene" uid="uid://csyryssvuesx2" path="res://features/weapons/tail_whip.tscn" id="4_cus2n"]
 [ext_resource type="Script" uid="uid://d2sai3iaj6bw7" path="res://features/player/player_hurtbox.gd" id="5_jsmgm"]
 [ext_resource type="Texture2D" uid="uid://cjxdb10ld4kuw" path="res://assets/medusa-1.png" id="5_kagtj"]
 [ext_resource type="Script" path="res://core/mask_item.gd" id="6_kagtj"]
+[ext_resource type="PackedScene" path="res://map.tscn" id="9_jsmgm"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xa854"]
 animations = [{
@@ -27,11 +29,14 @@ size = Vector2(36, 45)
 
 [node name="Main" type="Node2D" unique_id=1126552333]
 script = ExtResource("1_xa854")
-mob_scene = ExtResource("2_kagtj")
+mob_scenes = Array[PackedScene]([ExtResource("2_brq4u"), ExtResource("3_jsmgm")])
 spawn_interval = 1.0
 spawn_distance = 1000.0
 
+[node name="Background" parent="." unique_id=2052612969 instance=ExtResource("9_jsmgm")]
+
 [node name="Player" type="CharacterBody2D" parent="." unique_id=654543967]
+visibility_layer = 2
 position = Vector2(933, 537)
 script = ExtResource("3_cus2n")
 speed = 300
