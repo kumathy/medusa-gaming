@@ -1,0 +1,92 @@
+[gd_scene format=3 uid="uid://bmbxhrw0r5ij"]
+
+[ext_resource type="Script" uid="uid://inobm17f6olj" path="res://features/mobs/mob.gd" id="1_n7of7"]
+[ext_resource type="Texture2D" uid="uid://jwcrsohybjrb" path="res://assets/mobs/red_humanoid.png" id="2_8svfv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0j8br"]
+atlas = ExtResource("2_8svfv")
+region = Rect2(0, 0, 66, 66)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3vh7g"]
+atlas = ExtResource("2_8svfv")
+region = Rect2(66, 0, 66, 66)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_koy0m"]
+atlas = ExtResource("2_8svfv")
+region = Rect2(132, 0, 66, 66)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ceumx"]
+atlas = ExtResource("2_8svfv")
+region = Rect2(0, 66, 66, 66)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i4cbv"]
+atlas = ExtResource("2_8svfv")
+region = Rect2(66, 66, 66, 66)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yy36v"]
+atlas = ExtResource("2_8svfv")
+region = Rect2(132, 66, 66, 66)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t2tjg"]
+atlas = ExtResource("2_8svfv")
+region = Rect2(0, 132, 66, 66)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k1u5g"]
+atlas = ExtResource("2_8svfv")
+region = Rect2(66, 132, 66, 66)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u200k"]
+atlas = ExtResource("2_8svfv")
+region = Rect2(132, 132, 66, 66)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3inmp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0j8br")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3vh7g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_koy0m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ceumx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i4cbv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yy36v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t2tjg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k1u5g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u200k")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hx266"]
+size = Vector2(46, 71)
+
+[node name="RedHumanoid" type="Area2D" unique_id=1567676284]
+script = ExtResource("1_n7of7")
+speed = 50
+max_health = 3
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=914456485]
+sprite_frames = SubResource("SpriteFrames_3inmp")
+frame_progress = 0.7436953
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1021808879]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_hx266")

@@ -1,7 +1,6 @@
-# main.gd (or game.gd - attach this to your main/game scene root node)
 extends Node2D
 
-@export var mob_scene: PackedScene # Assign your mob scene in the inspector
+@export var mob_scenes: Array[PackedScene] = []
 @export var spawn_interval: float = 2.0 # Spawn a mob every 2 seconds
 @export var spawn_distance: float = 600.0 # Distance from player to spawn mobs
 
@@ -9,8 +8,7 @@ var player: CharacterBody2D
 var spawn_timer: float = 0.0
 
 func _ready() -> void:
-	# Get reference to player
-	player = $Player # Adjust path if your player is named differently
+	player = $Player
 	
 func _process(delta: float) -> void:
 	spawn_timer += delta
@@ -20,17 +18,16 @@ func _process(delta: float) -> void:
 		spawn_mob()
 
 func spawn_mob():
-	if mob_scene == null or player == null:
+	if mob_scenes.is_empty() or player == null:
 		return
 	
-	# Create new mob instance
-	var mob = mob_scene.instantiate()
+	var random_mob_scene = mob_scenes.pick_random()
+	var mob = random_mob_scene.instantiate()
 	
-	# Add to group
 	mob.add_to_group("mobs")
 	
 	# Random angle around the player
-	var angle = randf() * TAU # TAU = 2 * PI (full circle in radians)
+	var angle = randf() * TAU # TAU = 2 * PI
 	
 	# Calculate spawn position outside camera view
 	var spawn_pos = player.global_position + Vector2(cos(angle), sin(angle)) * spawn_distance
@@ -48,4 +45,3 @@ func _on_player_died():
 	# Stop spawning or restart game
 	set_process(false)
 	print("Game Over!")
-	# You can add game over logic here
