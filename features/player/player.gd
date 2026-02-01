@@ -27,20 +27,20 @@ func _ready() -> void:
 	screen_size = get_viewport_rect().size
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	velocity = Vector2.ZERO # The player's movement vector.
+func _physics_process(delta: float) -> void:
+	var input_vector = Vector2.ZERO # The player's movement vector.
 	
 	if Input.is_action_pressed("move_right"):
-		velocity.x += 1
+		input_vector.x += 1
 	if Input.is_action_pressed("move_left"):
-		velocity.x -= 1
+		input_vector.x -= 1
 	if Input.is_action_pressed("move_up"):
-		velocity.y -= 1
+		input_vector.y -= 1
 	if Input.is_action_pressed("move_down"):
-		velocity.y += 1
+		input_vector.y += 1
 	
-	if velocity.length() > 0:
-		velocity = velocity.normalized() * speed
+	input_vector = input_vector.normalized()
+	velocity = input_vector * stats.speed
 		
 	if velocity.x > 0:
 		facing_right = false
@@ -49,8 +49,7 @@ func _process(delta: float) -> void:
 		facing_right = true
 		$AnimatedSprite2D.flip_h = false
 		
-	position += velocity * delta
-	position = position.clamp(Vector2.ZERO, screen_size) # Prevent player from leaving screen.
+	move_and_slide()
 	
 	# Weapon attack timer
 	attack_timer += delta

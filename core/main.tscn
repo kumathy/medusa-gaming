@@ -7,8 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://csyryssvuesx2" path="res://features/weapons/tail_whip.tscn" id="4_cus2n"]
 [ext_resource type="Script" uid="uid://d2sai3iaj6bw7" path="res://features/player/player_hurtbox.gd" id="5_jsmgm"]
 [ext_resource type="Texture2D" uid="uid://cjxdb10ld4kuw" path="res://assets/medusa-1.png" id="5_kagtj"]
-[ext_resource type="Script" path="res://core/mask_item.gd" id="6_kagtj"]
-[ext_resource type="PackedScene" path="res://map.tscn" id="9_jsmgm"]
+[ext_resource type="Script" uid="uid://td0kv7hbt77e" path="res://core/mask_item.gd" id="6_kagtj"]
+[ext_resource type="PackedScene" uid="uid://b1qj0djfxfat1" path="res://core/map.tscn" id="9_jsmgm"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xa854"]
 animations = [{
