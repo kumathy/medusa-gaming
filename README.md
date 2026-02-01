@@ -15,6 +15,6 @@
 
 ## 🕹️ How to Run
 
-1. Download the zipped **.exe** file from the [Latest Github Release](https://github.com/kumathy/medusa-gaming/releases/tag/1.0.0)
+1. Download the zipped **.exe** file from the latest [Github Release](https://github.com/kumathy/medusa-gaming/releases/tag/1.0.0)
 2. Extract zip file
 3. Run `medusa-gaming.exe`
