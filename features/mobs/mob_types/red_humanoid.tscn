@@ -79,13 +79,13 @@ size = Vector2(46, 71)
 
 [node name="RedHumanoid" type="Area2D" unique_id=1567676284]
 script = ExtResource("1_n7of7")
-speed = 50
+speed = 40
 max_health = 3
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=914456485]
 sprite_frames = SubResource("SpriteFrames_3inmp")
-frame_progress = 0.7436953
+frame_progress = 0.056296494
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1021808879]
 position = Vector2(0, 0.5)

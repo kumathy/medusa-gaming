@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://ctxvpi7vfkpdp"]
+
+[ext_resource type="Script" uid="uid://inobm17f6olj" path="res://features/mobs/mob.gd" id="1_crk4o"]
+[ext_resource type="Texture2D" uid="uid://bkpw0o6tr7d5j" path="res://assets/mobs/red_oni.png" id="1_q3vda"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_crk4o"]
+atlas = ExtResource("1_q3vda")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h4sax"]
+atlas = ExtResource("1_q3vda")
+region = Rect2(256, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qrvko"]
+atlas = ExtResource("1_q3vda")
+region = Rect2(0, 256, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_41e5y"]
+atlas = ExtResource("1_q3vda")
+region = Rect2(256, 256, 256, 256)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5hase"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_crk4o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h4sax")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qrvko")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_41e5y")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_74t0g"]
+size = Vector2(157, 228)
+
+[node name="RedOni" type="Area2D" unique_id=40640763]
+scale = Vector2(0.75, 0.75)
+script = ExtResource("1_crk4o")
+speed = 25
+max_health = 5
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=961799546]
+sprite_frames = SubResource("SpriteFrames_5hase")
+frame_progress = 0.106334485
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1726709571]
+position = Vector2(-3.5, 19)
+shape = SubResource("RectangleShape2D_74t0g")

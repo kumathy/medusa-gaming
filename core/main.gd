@@ -9,6 +9,7 @@ var spawn_timer: float = 0.0
 
 func _ready() -> void:
 	player = $Player
+	player.died.connect(_on_player_died)
 	
 func _process(delta: float) -> void:
 	spawn_timer += delta
@@ -42,6 +43,5 @@ func spawn_mob():
 	add_child(mob)
 
 func _on_player_died():
-	# Stop spawning or restart game
-	set_process(false)
-	print("Game Over!")
+	set_process(false) # Stop spawning mobs
+	$CanvasLayer/GameOverHUD.show_game_over()

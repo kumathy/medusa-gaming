@@ -43,13 +43,14 @@ animations = [{
 size = Vector2(73, 59)
 
 [node name="RedBat" type="Area2D" unique_id=1464610482]
+scale = Vector2(0.75, 0.75)
 script = ExtResource("1_0bsfg")
-speed = 150
+speed = 75
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=463489168]
 sprite_frames = SubResource("SpriteFrames_h7n24")
-frame_progress = 0.21639565
+frame_progress = 0.92511606
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=191263208]
 position = Vector2(-0.5, 2.5)
